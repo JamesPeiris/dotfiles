@@ -1,0 +1,109 @@
+# -----------------------------------------------
+#                     GENERAL
+# -----------------------------------------------
+
+# TODO: Tell brew not to update on each run - only once a week
+#       Should this live in aliases or .zshrc?
+# export HOMEBREW_AUTO_UPDATE_SECS=604800 
+
+alias l="exa"
+alias c="clear"
+
+# TODO: Are these required with oh-my-zsh installed?
+
+  # alias ..="cd .."
+  # alias ...="cd ../.."
+  # alias ....="cd ../../.."
+  # alias .....="cd ../../../.."
+
+# -----------------------------------------------
+#                    HOMEBREW
+# -----------------------------------------------
+
+alias brewdeps="brew deps --tree --installed"
+
+# -----------------------------------------------
+#                      ZSH
+# -----------------------------------------------
+
+alias zshrc="nano ~/.zshrc"
+alias zshenv="nano ~/.zshenv"
+alias zshaliases="nano ~/.zshaliases"
+alias ohmyzsh="nano ~/.oh-my-zsh"
+
+# -----------------------------------------------
+#                      GIT
+# -----------------------------------------------
+
+alias gbc="git rev-parse --abbrev-ref HEAD" # Git Branch Current
+alias gs="git stash"
+alias gsp="git stash pop"
+alias gpl="git pull origin"
+alias gplm="gpl master"
+alias gplc="gbc | xargs -I _ $SHELL -c 'gpl _'"
+#alias gpo="git rev-parse --abbrev-ref HEAD | xargs -I _ $SHELL -c 'gpl _ --no-verify'"
+alias gpsu="git rev-parse --abbrev-ref HEAD | xargs git push --set-upstream origin"
+
+# -----------------------------------------------
+#                   TERRAFORM
+# -----------------------------------------------
+
+alias tf="terraform"
+alias tfa="tf apply"
+alias tfo="tf output"
+alias tfp="tf plan"
+alias tfd="tf destroy"
+alias tfi="tf init"
+
+# -----------------------------------------------
+#                      K8S
+# -----------------------------------------------
+
+# alias k='kubectl $(if [[ "$CTX" ]]; then; echo "--context $CTX"; fi) $(if [[ "$KNS" ]]; then; echo "--namespace $KNS"; fi)'
+
+alias k="kubectl"
+
+alias kuc="k config use-context"
+alias kgc="k config get-contexts"
+alias kdc="k config delete-context"
+alias kcc="k config current-context"
+
+alias kns='kubectl config set-context --current --namespace=$KNS'
+alias kgns="k config view --minify --output 'jsonpath={..namespace}'; echo"
+
+alias kaf="k apply -f"
+alias kga="k get all"
+alias kgn="k get ns"
+alias kgp="k get po"
+
+# -----------------------------------------------
+#                     RANDOM
+# -----------------------------------------------
+
+alias ocp="~/open-common-programs.sh"
+alias rmrf="rm -rf"
+alias owndir="chmod -R 0755"
+
+# -----------------------------------------------
+#                     DOCKER
+# -----------------------------------------------
+
+alias di="docker images"
+alias dia="di -a"
+alias doco="docker container"
+alias docols="doco ls"
+alias docolsa="docols -a"
+alias docorm="doco rm"
+alias docormf="doco rm -f"
+alias db="docker build"
+alias dbt="db -t"
+alias dt="docker tag"
+alias dr="docker run"
+alias drit="dr -it --rm"
+alias dritmcd="drit -v `pwd`:`pwd`"
+
+# Remove containers - exited
+alias drec="dclsa | grep 'Exited (' | awk '{ print $1 }' | xargs docker container rm -f"
+
+# Remove images - from today
+alias drift="di | grep 'hours\|minutes\|seconds' | awk '{ print $3 }' | xargs docker image rm -f"

@@ -1,0 +1,12 @@
+# defaults write -g com.apple.trackpad.scaling 5.0 # Has this changed from "com.apple.trackpad.scaling" ?
+defaults write -g com.apple.trackpad.scaling 0.5
+defaults write com.apple.Dock autohide-delay -float 0
+defaults write com.apple.dock expose-animation-duration -float 0.3
+defaults write com.apple.Dock showhidden -bool YES
+defaults write com.apple.finder AppleShowAllFiles -bool YES
+defaults write com.apple.finder CreateDesktop -bool false
+defaults write -g NSAllowContinuousSpellChecking -bool false
+defaults write com.apple.dock expose-animation-duration -float 0 
+defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool true
+
+# TODO: Describe what each of these does!
