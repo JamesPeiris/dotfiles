@@ -6,8 +6,14 @@
 #       Should this live in aliases or .zshrc?
 # export HOMEBREW_AUTO_UPDATE_SECS=604800 
 
-alias l="exa"
+alias l="exa -Flah --sort type"
+alias ls="l --tree"
+alias ls2="ls -L 2"
+alias ls3="ls -L 3"
+alias ls4="ls -L 4"
+
 alias c="clear"
+alias grep="rg"
 
 # TODO: Are these required with oh-my-zsh installed?
 
@@ -35,6 +41,8 @@ alias ohmyzsh="nano ~/.oh-my-zsh"
 #                      GIT
 # -----------------------------------------------
 
+# TODO: Review which of these are still necessary given the git plugin
+
 alias gbc="git rev-parse --abbrev-ref HEAD" # Git Branch Current
 alias gs="git stash"
 alias gsp="git stash pop"
@@ -59,17 +67,8 @@ alias tfi="tf init"
 #                      K8S
 # -----------------------------------------------
 
-# alias k='kubectl $(if [[ "$CTX" ]]; then; echo "--context $CTX"; fi) $(if [[ "$KNS" ]]; then; echo "--namespace $KNS"; fi)'
-
+# TODO: Does oh-my-zsh have a k8s plugin for these?
 alias k="kubectl"
-
-alias kuc="k config use-context"
-alias kgc="k config get-contexts"
-alias kdc="k config delete-context"
-alias kcc="k config current-context"
-
-alias kns='kubectl config set-context --current --namespace=$KNS'
-alias kgns="k config view --minify --output 'jsonpath={..namespace}'; echo"
 
 alias kaf="k apply -f"
 alias kga="k get all"
@@ -80,13 +79,15 @@ alias kgp="k get po"
 #                     RANDOM
 # -----------------------------------------------
 
-alias ocp="~/open-common-programs.sh"
 alias rmrf="rm -rf"
 alias owndir="chmod -R 0755"
 
 # -----------------------------------------------
 #                     DOCKER
 # -----------------------------------------------
+
+# TODO: Add check for Apple Silicon before applying this alias
+alias docker=/Applications/Rancher\ Desktop.app/Contents/Resources/resources/darwin/bin/nerdctl
 
 alias di="docker images"
 alias dia="di -a"
