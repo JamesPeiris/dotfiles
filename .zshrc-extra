@@ -8,6 +8,7 @@
 source ~/.aliases
 source <(kubectl completion zsh)
 
+export PATH=$HOME/Library/Python/3.8/bin:$PATH
 export PATH=/Applications/Rancher\ Desktop.app/Contents/Resources/resources/darwin/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 
