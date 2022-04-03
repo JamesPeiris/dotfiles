@@ -1,3 +1,4 @@
+#!/bin/bash
 # TODO: Describe what each of these does!
 
 # defaults write -g com.apple.trackpad.scaling 5.0 # Has this changed from "com.apple.trackpad.scaling" ?

@@ -12,15 +12,9 @@ alias ls2="ls -L 2"
 alias ls3="ls -L 3"
 alias ls4="ls -L 4"
 
+alias p="pwd"
 alias c="clear"
 alias grep="rg"
-
-# TODO: Are these required with oh-my-zsh installed?
-
-  # alias ..="cd .."
-  # alias ...="cd ../.."
-  # alias ....="cd ../../.."
-  # alias .....="cd ../../../.."
 
 # -----------------------------------------------
 #                    HOMEBREW
@@ -34,7 +28,7 @@ alias brewdeps="brew deps --tree --installed"
 
 alias zshrc="nano ~/.zshrc"
 alias zshenv="nano ~/.zshenv"
-alias zshaliases="nano ~/.zshaliases"
+alias aliases="nano ~/.aliases"
 alias ohmyzsh="nano ~/.oh-my-zsh"
 
 # -----------------------------------------------
@@ -49,8 +43,7 @@ alias gsp="git stash pop"
 alias gpl="git pull origin"
 alias gplm="gpl master"
 alias gplc="gbc | xargs -I _ $SHELL -c 'gpl _'"
-#alias gpo="git rev-parse --abbrev-ref HEAD | xargs -I _ $SHELL -c 'gpl _ --no-verify'"
-alias gpsu="git rev-parse --abbrev-ref HEAD | xargs git push --set-upstream origin"
+# alias gpo="git rev-parse --abbrev-ref HEAD | xargs -I _ $SHELL -c 'gpl _ --no-verify'"
 
 # -----------------------------------------------
 #                   TERRAFORM
