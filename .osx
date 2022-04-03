@@ -2,7 +2,7 @@
 
 # defaults write -g com.apple.trackpad.scaling 5.0 # Has this changed from "com.apple.trackpad.scaling" ?
 defaults write -g com.apple.trackpad.scaling 0.5
-defaults write com.apple.Dock autohide-delay -float 0
+defaults write com.apple.Dock autohide-delay -float 0 # https://osxdaily.com/2012/10/09/best-defaults-write-commands-mac-os-x/
 defaults write com.apple.dock expose-animation-duration -float 0.3
 defaults write com.apple.Dock showhidden -bool YES
 defaults write com.apple.finder AppleShowAllFiles -bool YES
@@ -10,3 +10,57 @@ defaults write com.apple.finder CreateDesktop -bool false
 defaults write -g NSAllowContinuousSpellChecking -bool false
 defaults write com.apple.dock expose-animation-duration -float 0 
 defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool true
+
+# TODO: Choose which of these to use
+# TODO: See if chosen ones are up-to-date
+
+# https://www.defaults-write.com/adding-quit-option-to-os-x-finder/#more-1458
+# defaults write com.apple.finder QuitMenuItem -bool true
+
+# https://www.defaults-write.com/expand-save-panel-default/
+# defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+# defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+
+# https://www.defaults-write.com/display-the-file-extensions-in-finder/#more-1354
+# defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# https://www.defaults-write.com/enable-a-larger-dock-icon-size-than-default/
+# defaults write com.apple.dock largesize -float SIZE
+
+# https://www.defaults-write.com/plain-text-default-textedit/
+# https://www.defaults-write.com/speed-up-macos-high-sierra/
+# https://www.defaults-write.com/add-a-blank-space-to-the-dock/
+# https://www.defaults-write.com/make-os-x-screenshots-without-window-shadows/
+# https://www.defaults-write.com/10-terminal-commands-to-speed-up-macos-sierra-on-your-mac/
+# https://www.defaults-write.com/disable-automatically-rearrange-spaces-based-on-recent-use/
+# https://www.defaults-write.com/mac-app-store-enable-debug-menu/
+# https://www.defaults-write.com/10-terminal-commands-to-speed-up-your-mac-in-os-x-el-capitan/
+# https://www.defaults-write.com/removing-the-date-and-time-stamp-from-screenshots/
+# https://www.defaults-write.com/how-to-add-a-blank-space-to-your-dock/
+# https://www.defaults-write.com/os-x-how-to-quickly-hide-the-desktop-icons/
+# https://www.defaults-write.com/how-to-reset-the-dns-cache-in-os-x/
+# https://www.defaults-write.com/disable-full-screen-animation-of-os-x/
+# https://www.defaults-write.com/yosemite-enable-dark-mode-with-a-keyboard-shortcut-hotkey/
+# https://www.groovypost.com/howto/cool-macos-terminal-commands
+# https://www.makeuseof.com/tag/hidden-mac-settings-defaults-command/
+# https://www.maketecheasier.com/customize-mac-terminal/
+# https://www.techrepublic.com/article/macos-terminal-commands-every-mac-user-should-know/
+# https://computers.tutsplus.com/tutorials/40-terminal-tips-and-tricks-you-never-thought-you-needed--mac-51192
+# https://www.wired.com/story/5-useful-terminal-tricks-for-mac/
+# http://www.rawinfopages.com/mac/what-is-the-defaults-terminal-command
+# https://www.macworld.co.uk/how-to/mac-terminal-projects-tutorial-3613813/
+# https://appletoolbox.com/10-mac-terminal-tips-and-tricks-for-pro-users/
+# https://apple.stackexchange.com/questions/111534/iterm2-doesnt-read-com-googlecode-iterm2-plist
+# https://apple.stackexchange.com/questions/140622/where-does-iterm-store-user-preferences
+# https://www.google.com/search?q=iterm2+plist+entry+for+option+arrow+keys
+
+# https://stackoverflow.com/questions/23253479/how-do-i-add-values-to-nested-arrays-or-dicts-using-the-defaults-write-command
+
+# https://iterm2.com/faq.html
+# https://iterm2.com/documentation-hotkey.html
+# https://iterm2.com/documentation-preferences-keys.html
+# https://apple.stackexchange.com/questions/136928/using-alt-cmd-right-left-arrow-in-iterm
+# https://osxdaily.com/2018/02/06/use-diff-compare-files-command-line-mac/
+# https://medium.com/@jonnyhaynes/jump-forwards-backwards-and-delete-a-word-in-iterm2-on-mac-os-43821511f0a
+# https://coderwall.com/p/ds2dha/word-line-deletion-and-navigation-shortcuts-in-iterm2
+# https://stackoverflow.com/questions/8778368/getting-info-from-plutil

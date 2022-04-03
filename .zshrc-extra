@@ -1,15 +1,6 @@
-# NOTE: The following comments wrapping the relevant commands
-#       can be used by the Ansible shell task to auto-delete
-#       any existing equivalents from previous Ansible runs,
-#       thus ensuring idempotency.
-
-# 0lbzzB9FUaevvVE9JK5bYoclXjJqSvamJ5tGWvjo BEGIN
-
-source ~/.aliases
-source <(kubectl completion zsh)
-
 export PATH=$HOME/Library/Python/3.8/bin:$PATH
 export PATH=/Applications/Rancher\ Desktop.app/Contents/Resources/resources/darwin/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 
-# 0lbzzB9FUaevvVE9JK5bYoclXjJqSvamJ5tGWvjo END
+source ~/.aliases
+source <(kubectl completion zsh)
