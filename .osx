@@ -9,8 +9,9 @@ defaults write com.apple.Dock showhidden -bool YES
 defaults write com.apple.finder AppleShowAllFiles -bool YES
 defaults write com.apple.finder CreateDesktop -bool false
 defaults write -g NSAllowContinuousSpellChecking -bool false
-defaults write com.apple.dock expose-animation-duration -float 0 
-defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool true
+defaults write com.apple.dock expose-animation-duration -float 0
+# TODO: Doesn't seem to work here but works fine directly in terminal with "sudo"
+# defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool true
 
 # TODO: Choose which of these to use
 # TODO: See if chosen ones are up-to-date
