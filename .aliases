@@ -9,10 +9,12 @@
 alias l="exa -Flah --sort type"
 alias ls="l --tree"
 
+alias l1="ls -L 1"
 alias l2="ls -L 2"
 alias l3="ls -L 3"
 alias l4="ls -L 4"
 
+alias ls1="l1"
 alias ls2="l2"
 alias ls3="l3"
 alias ls4="l4"
