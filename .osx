@@ -1,31 +1,33 @@
 #!/bin/bash
 
-GLOBAL_USER_PLIST=~/Library/Preferences/.GlobalPreferences.plist
+export GLOBAL_USER_PREF_FILE=~/Library/Preferences/.GlobalPreferences.plist
 
 # TODO: Describe what each of these does!
 
-defaults write "${GLOBAL_USER_PLIST}" com.apple.trackpad.scaling 5.0
+source ~/.osx-uxui
+
+defaults write "${GLOBAL_USER_PREF_FILE}" com.apple.trackpad.scaling 5.0
 defaults write com.apple.Dock autohide-delay -float 0 # https://osxdaily.com/2012/10/09/best-defaults-write-commands-mac-os-x/
 defaults write com.apple.dock expose-animation-duration -float 0.1
 defaults write com.apple.Dock showhidden -bool YES
 defaults write com.apple.finder AppleShowAllFiles -bool YES
 defaults write com.apple.finder CreateDesktop -bool false
-defaults write "${GLOBAL_USER_PLIST}" NSAllowContinuousSpellChecking -bool false
+defaults write "${GLOBAL_USER_PREF_FILE}" NSAllowContinuousSpellChecking -bool false
 defaults write com.apple.dock expose-animation-duration -float 0
 # defaults write com.apple.universalaccess reduceTransparency -bool true # Seems to fail here
 
 # Disable press-and-hold for keys in favor of key repeat
-defaults write "${GLOBAL_USER_PLIST}" ApplePressAndHoldEnabled -bool false # TODO: Requires restart?
+defaults write "${GLOBAL_USER_PREF_FILE}" ApplePressAndHoldEnabled -bool false # TODO: Requires restart?
 
 # Set a blazingly fast keyboard repeat rate, and make it happen more quickly.
-defaults write "${GLOBAL_USER_PLIST}" InitialKeyRepeat -int 10
-defaults write "${GLOBAL_USER_PLIST}" KeyRepeat -int 1
+defaults write "${GLOBAL_USER_PREF_FILE}" InitialKeyRepeat -int 10
+defaults write "${GLOBAL_USER_PREF_FILE}" KeyRepeat -int 1
 # defaults write -g InitialKeyRepeat -int 20 # M1 Mac + Monterey = does not persist on restart, only logout/in
 # defaults write -g KeyRepeat -int 1         # M1 Mac + Monterey = does not persist on restart, only logout/in
 
 # TODO: Doesn't seem to work here but works fine directly in terminal with "sudo"
 # defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool true
-# defaults write "${GLOBAL_USER_PLIST}" _HIEnableThemeSwitchHotKey -bool true # TODO: Uncomment and test this one
+# defaults write "${GLOBAL_USER_PREF_FILE}" _HIEnableThemeSwitchHotKey -bool true # TODO: Uncomment and test this one
 
 # # ================================================================================================
 # # ================================================================================================
