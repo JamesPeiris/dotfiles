@@ -1,16 +1,10 @@
 # A command to quickly find duplicate settings across this repo
-# rg -. 'defaults write' -I | sed 's/# //g' | sed 's/#//g' | sed 's/sudo//g' | xargs -I _ echo _ | sed 's/${GLOBAL_USER_PREF_FILE}/NSGlobalDomain/g' | sed 's|/Library/Preferences/||g' | sed 's/defaults write -g/defaults write NSGlobalDomain/g' | sort | uniq -d
+# rg -. 'defaults write' -I | sed 's/# //g' | sed 's/#//g' | sed 's/sudo//g' | xargs -I _ echo _ | sed 's/${GLOBAL_USER_PREF_FILE}/NSGlobalDomain/g' | sed 's|/Library/Preferences/||g' | sed 's/defaults write -g/defaults write NSGlobalDomain/g' | tr '[:upper:]' '[:lower:]' | sort | uniq -d
 
 # TODO: Choose which of these to use
 # TODO: See if chosen ones are up-to-date
 
-# https://www.defaults-write.com/adding-quit-option-to-os-x-finder/#more-1458
-# defaults write com.apple.finder QuitMenuItem -bool true
-
 # https://www.defaults-write.com/expand-save-panel-default/
-
-# https://www.defaults-write.com/display-the-file-extensions-in-finder/#more-1354
-# defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # https://www.defaults-write.com/enable-a-larger-dock-icon-size-than-default/
 # defaults write com.apple.dock largesize -float SIZE

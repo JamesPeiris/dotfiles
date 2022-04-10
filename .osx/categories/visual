@@ -19,9 +19,6 @@ defaults write "${GLOBAL_USER_PREF_FILE}" AppleHighlightColor -string "0.764700 
 # Sidebar Icon Size (Medium) [Because I'm getting blinder each day]
 defaults write "${GLOBAL_USER_PREF_FILE}" NSTableViewDefaultSizeMode -int 3
 
-# TODO: Describe what this does!
-defaults write com.apple.Dock showhidden -bool YES
-
 # Help Viewer Windows (Non-floating mode) [UNCLEAR...]
 defaults write com.apple.helpviewer DevMode -bool true
 
@@ -40,6 +37,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.
 # Set background to dark-grey color
 # osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/System/Library/Desktop Pictures/Solid Colors/Stone.png"'
 
+# TODO: Describe what this does!
 defaults write com.apple.Dock showhidden -bool YES
 defaults write com.apple.finder AppleShowAllFiles -bool YES
 
@@ -142,22 +140,16 @@ defaults write com.apple.finder AppleShowAllFiles -bool YES
 # # Don’t animate opening applications from the Dock
 # defaults write com.apple.dock launchanim -bool false
 
+# TODO: Which float value is best
 # # Speed up Mission Control animations
 # defaults write com.apple.dock expose-animation-duration -float 0.1
-
-# # Automatically hide and show the Dock
-# defaults write com.apple.dock autohide -bool true
+# defaults write com.apple.dock expose-animation-duration -float 0
 
 # # Make Dock icons of hidden applications translucent
 # defaults write com.apple.dock showhidden -bool true
 
 # # Don’t show recent applications in Dock
 # defaults write com.apple.dock show-recents -bool false
-
-# # Remove the auto-hiding Dock delay
-# defaults write com.apple.dock autohide-delay -float 0
-# # Remove the animation when hiding/showing the Dock
-# defaults write com.apple.dock autohide-time-modifier -float 0
 
 # # Add a spacer to the left side of the Dock (where the applications are)
 # #defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
