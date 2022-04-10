@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Continue on individual errors
+set +e
+
 # TODO: Use the following comment format for each setting
 # <SETTING> (<VALUE>) [<REASON>]
 
@@ -88,7 +91,7 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 # defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 
 # Show the ~/Library folder
-chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
+chflags nohidden ~/Library # && xattr -d com.apple.FinderInfo ~/Library # Causes error: "xattr: /Users/jamespeiris/Library: No such xattr: com.apple.FinderInfo"
 
 # Show the /Volumes folder
 sudo chflags nohidden /Volumes

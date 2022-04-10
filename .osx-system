@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Continue on individual errors
+set +e
+
 # TODO: Use the following comment format for each setting
 # <SETTING> (<VALUE>) [<REASON>]
 
