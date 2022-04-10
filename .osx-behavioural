@@ -131,12 +131,12 @@ defaults write "${GLOBAL_USER_PREF_FILE}" com.apple.mouse.tapBehavior -int 1
 # defaults write com.apple.AppleMultitouchTrackpad ActuationStrength -int 0
 
 # Trackpad: map bottom right corner to right-click
-# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
-# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
-# defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool true
-# defaults write com.apple.AppleMultitouchTrackpad TrackpadCornerSecondaryClick -int 2
-# defaults -currentHost write "${GLOBAL_USER_PREF_FILE}" com.apple.trackpad.trackpadCornerClickBehavior -int 1
-# defaults -currentHost write "${GLOBAL_USER_PREF_FILE}" com.apple.trackpad.enableSecondaryClick -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool true
+defaults write com.apple.AppleMultitouchTrackpad TrackpadCornerSecondaryClick -int 2
+defaults -currentHost write "${GLOBAL_USER_PREF_FILE}" com.apple.trackpad.trackpadCornerClickBehavior -int 1
+defaults -currentHost write "${GLOBAL_USER_PREF_FILE}" com.apple.trackpad.enableSecondaryClick -bool true
 
 # Trackpad: map bottom right corner to right-click (requires restart!)
 # defaults write "${GLOBAL_USER_PREF_FILE}" ContextMenuGesture -int 1
@@ -236,9 +236,9 @@ defaults write "${GLOBAL_USER_PREF_FILE}" KeyRepeat -int 1
 # defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
 # # Enable snap-to-grid for icons on the desktop and in other icon views
-# /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-# /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-# /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
 # # Disable the warning before emptying the Trash
 # defaults write com.apple.finder WarnOnEmptyTrash -bool false
