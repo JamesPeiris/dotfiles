@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Continue on individual errors
-set +e
+echo "   ⏳ visual"
 
 # TODO: Use the following comment format for each setting
 # <SETTING> (<VALUE>) [<REASON>]
@@ -231,3 +230,5 @@ defaults write com.apple.Terminal ShowLineMarks -int 0
 # TODO: Is this needed? Remove?
 # # Install the Solarized Dark theme for iTerm
 # open "${HOME}/init/Solarized Dark.itermcolors"
+
+echo "   ✅ visual"

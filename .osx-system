@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Continue on individual errors
-set +e
+echo "   ⏳ system"
 
 # TODO: Use the following comment format for each setting
 # <SETTING> (<VALUE>) [<REASON>]
@@ -13,3 +12,5 @@ set +e
 # sudo scutil --set HostName "0x6D746873"
 # sudo scutil --set LocalHostName "0x6D746873"
 # sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x6D746873"
+
+echo "   ✅ system"

@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# Continue on individual errors
-set +e
+echo "   ⏳ behavioural"
+
+# exit 1 # TODO: Test Ansible with this uncommented
 
 # TODO: Use the following comment format for each setting
 # <SETTING> (<VALUE>) [<REASON>]
@@ -597,3 +598,5 @@ defaults write "${GLOBAL_USER_PREF_FILE}" KeyRepeat -int 1
 # Expand save panel by default
 defaults write "${GLOBAL_USER_PREF_FILE}" NSNavPanelExpandedStateForSaveMode -bool true
 defaults write "${GLOBAL_USER_PREF_FILE}" NSNavPanelExpandedStateForSaveMode2 -bool true
+
+echo "   ✅ behavioural"

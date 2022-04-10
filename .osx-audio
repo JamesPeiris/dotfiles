@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Continue on individual errors
-set +e
+echo "   ⏳ audio"
 
 # TODO: Use the following comment format for each setting
 # <SETTING> (<VALUE>) [<REASON>]
@@ -10,3 +9,5 @@ set +e
 sudo nvram SystemAudioVolume=" " # TODO: Test if this works. If not, uncomment next line.
 sudo nvram StartupMute=%01     # https://apple.stackexchange.com/questions/168092/disable-os-x-startup-sound
 # TODO: Still not working!
+
+echo "   ✅ audio"

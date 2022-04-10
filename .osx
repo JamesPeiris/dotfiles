@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Continue on individual errors
-set +e
-
 # 
 # Mac OS X configuration
 #
@@ -58,7 +55,11 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # source ~/.osx-scripts/system
 # source ~/.osx-scripts/visual
 
+echo "⏳ ALL"
+
 source ~/.osx-audio
 source ~/.osx-behavioural
 source ~/.osx-system
 source ~/.osx-visual
+
+echo "✅ ALL"
