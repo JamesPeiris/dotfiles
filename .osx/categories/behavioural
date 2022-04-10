@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # TODO: Use the following comment format for each setting
-# <AREA> (<SETTING>) [<REASON>]
+# <SETTING> (<VALUE>) [<REASON>]
 
 # TODO: Describe what this does/how!
 defaults write "${GLOBAL_USER_PREF_FILE}" com.apple.trackpad.scaling 5.0
 
-# Disable automatic capitalization as it’s annoying when typing code
+# Automatic Capitalization (Disable)  as it’s annoying when typing code
 defaults write "${GLOBAL_USER_PREF_FILE}" NSAutomaticCapitalizationEnabled -bool false
 
 # Disable smart dashes as they’re annoying when typing code
