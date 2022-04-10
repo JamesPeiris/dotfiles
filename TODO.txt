@@ -32,14 +32,7 @@
 # http://www.rawinfopages.com/mac/what-is-the-defaults-terminal-command
 # https://www.macworld.co.uk/how-to/mac-terminal-projects-tutorial-3613813/
 # https://appletoolbox.com/10-mac-terminal-tips-and-tricks-for-pro-users/
-# https://apple.stackexchange.com/questions/111534/iterm2-doesnt-read-com-googlecode-iterm2-plist
-# https://apple.stackexchange.com/questions/140622/where-does-iterm-store-user-preferences
-# https://www.google.com/search?q=iterm2+plist+entry+for+option+arrow+keys
 
 # https://stackoverflow.com/questions/23253479/how-do-i-add-values-to-nested-arrays-or-dicts-using-the-defaults-write-command
-
-# https://apple.stackexchange.com/questions/136928/using-alt-cmd-right-left-arrow-in-iterm
 # https://osxdaily.com/2018/02/06/use-diff-compare-files-command-line-mac/
-# https://medium.com/@jonnyhaynes/jump-forwards-backwards-and-delete-a-word-in-iterm2-on-mac-os-43821511f0a
-# https://coderwall.com/p/ds2dha/word-line-deletion-and-navigation-shortcuts-in-iterm2
 # https://stackoverflow.com/questions/8778368/getting-info-from-plutil
