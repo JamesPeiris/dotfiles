@@ -49,7 +49,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Include relevant command files.
 
-source ~/.osx/categories/audio
-source ~/.osx/categories/behavioural
-source ~/.osx/categories/system
-source ~/.osx/categories/visual
+source ~/.osx-scripts/audio
+source ~/.osx-scripts/behavioural
+source ~/.osx-scripts/system
+source ~/.osx-scripts/visual
