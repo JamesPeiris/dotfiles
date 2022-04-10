@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# TODO: Use the following comment format for each setting
+# <AREA> (<SETTING>) [<REASON>]
+
+# Disable the sound effects on boot
+sudo nvram SystemAudioVolume=" " # TODO: Test if this works. If not, uncomment next line.
+sudo nvram StartupMute=%01     # https://apple.stackexchange.com/questions/168092/disable-os-x-startup-sound
+# TODO: Still not working!
