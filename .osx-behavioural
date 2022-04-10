@@ -58,10 +58,11 @@ defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
 # Disable automatic termination of inactive apps
 defaults write "${GLOBAL_USER_PREF_FILE}" NSDisableAutomaticTermination -bool true
 
-# ###############################################################################
-# # Energy saving                                                               #
-# ###############################################################################
+###############################################################################
+# Energy saving                                                               #
+###############################################################################
 
+# TODO: Benefit of this is?
 # # Enable lid wakeup
 # sudo pmset -a lidwake 1
 
@@ -122,8 +123,8 @@ defaults write "${GLOBAL_USER_PREF_FILE}" com.apple.trackpad.scaling 5.0
 # TODO: Review whether this is actually nice
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults -currentHost write "${GLOBAL_USER_PREF_FILE}" com.apple.mouse.tapBehavior -int 1
+defaults write "${GLOBAL_USER_PREF_FILE}" com.apple.mouse.tapBehavior -int 1
 
 # Trackpad: Haptic feedback (light, silent clicking)
 # defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
@@ -134,21 +135,21 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
 # defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool true
 # defaults write com.apple.AppleMultitouchTrackpad TrackpadCornerSecondaryClick -int 2
-# defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
-# defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
+# defaults -currentHost write "${GLOBAL_USER_PREF_FILE}" com.apple.trackpad.trackpadCornerClickBehavior -int 1
+# defaults -currentHost write "${GLOBAL_USER_PREF_FILE}" com.apple.trackpad.enableSecondaryClick -bool true
 
 # Trackpad: map bottom right corner to right-click (requires restart!)
-# defaults write NSGlobalDomain ContextMenuGesture -int 1
+# defaults write "${GLOBAL_USER_PREF_FILE}" ContextMenuGesture -int 1
 
 # # Disable “natural” (Lion-style) scrolling
-# defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+# defaults write "${GLOBAL_USER_PREF_FILE}" com.apple.swipescrolldirection -bool false
 
 # # Increase sound quality for Bluetooth headphones/headsets
 # defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
 # # Enable full keyboard access for all controls
 # # (e.g. enable Tab in modal dialogs)
-# defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+# defaults write "${GLOBAL_USER_PREF_FILE}" AppleKeyboardUIMode -int 3
 
 # # Use scroll gesture with the Ctrl (^) modifier key to zoom
 # defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
@@ -157,7 +158,7 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
 # # Disable press-and-hold for keys in favor of key repeat
-# defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+# defaults write "${GLOBAL_USER_PREF_FILE}" ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate, and make it happen more quickly.
 defaults write "${GLOBAL_USER_PREF_FILE}" InitialKeyRepeat -int 10
@@ -168,10 +169,10 @@ defaults write "${GLOBAL_USER_PREF_FILE}" KeyRepeat -int 1
 # # Set language and text formats
 # # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
 # # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
-# defaults write NSGlobalDomain AppleLanguages -array "en" "nl"
-# defaults write NSGlobalDomain AppleLocale -string "en_GB@currency=EUR"
-# defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
-# defaults write NSGlobalDomain AppleMetricUnits -bool true
+# defaults write "${GLOBAL_USER_PREF_FILE}" AppleLanguages -array "en" "nl"
+# defaults write "${GLOBAL_USER_PREF_FILE}" AppleLocale -string "en_GB@currency=EUR"
+# defaults write "${GLOBAL_USER_PREF_FILE}" AppleMeasurementUnits -string "Centimeters"
+# defaults write "${GLOBAL_USER_PREF_FILE}" AppleMetricUnits -bool true
 
 # # Show language menu in the top right corner of the boot screen
 # sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
@@ -213,12 +214,12 @@ defaults write "${GLOBAL_USER_PREF_FILE}" KeyRepeat -int 1
 # defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 # # Enable spring loading for directories
-# defaults write NSGlobalDomain com.apple.springing.enabled -bool true
+# defaults write "${GLOBAL_USER_PREF_FILE}" com.apple.springing.enabled -bool true
 
 # TODO: WHICH FLOAT VALUE IS MOST APPROPRIATE?
 # # Remove the spring loading delay for directories
-# defaults write NSGlobalDomain com.apple.springing.delay -float 0
-# defaults write NSGlobalDomain com.apple.springing.delay -float 0.1
+# defaults write "${GLOBAL_USER_PREF_FILE}" com.apple.springing.delay -float 0
+# defaults write "${GLOBAL_USER_PREF_FILE}" com.apple.springing.delay -float 0.1
 
 # # Avoid creating .DS_Store files on network or USB volumes
 # defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
@@ -351,7 +352,7 @@ defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool 
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 
 # Add a context menu item for showing the Web Inspector in web views
-defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+defaults write "${GLOBAL_USER_PREF_FILE}" WebKitDeveloperExtras -bool true
 
 # Enable continuous spellchecking
 defaults write com.apple.Safari WebContinuousSpellCheckingEnabled -bool true
