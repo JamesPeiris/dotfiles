@@ -167,7 +167,21 @@ defaults write com.apple.Safari ShowFavoritesBar -bool false
 defaults write com.apple.Safari ShowSidebarInTopSites -bool false
 
 # Remove useless icons from Safari’s bookmarks bar
-defaults write com.apple.Safari ProxiesInBookmarksBar "()"
+defaults write com.apple.Safari ProxiesInBookmarksBar '()'
+
+# Enable compact view mode
+defaults write com.apple.Safari ShowStandaloneTabBar -int 0
+
+# Remove the clutter from the Start Page
+defaults write com.apple.Safari HideStartPageSiriSuggestionsEmptyItemView -int 0
+defaults write com.apple.Safari ShowBackgroundImageInFavorites -int 0
+defaults write com.apple.Safari ShowFavorites -int 0
+defaults write com.apple.Safari ShowFavoritesBar -int 0
+defaults write com.apple.Safari 'ShowFavoritesBar-v2' -int 0
+defaults write com.apple.Safari ShowFrequentlyVisitedSites -int 0
+defaults write com.apple.Safari ShowPrivacyReportInFavorites -int 0
+defaults write com.apple.Safari ShowReadingListInFavorites -int 0
+defaults write com.apple.Safari ShowSiriSuggestionsPreference -int 0
 
 ###############################################################################
 # Mail                                                                        #
