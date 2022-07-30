@@ -1,0 +1,11 @@
+export PATH=$HOME/Library/Python/3.8/bin:$PATH
+export PATH=/Applications/Rancher\ Desktop.app/Contents/Resources/resources/darwin/bin:$PATH
+export PATH=/opt/homebrew/bin:$PATH
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export GPG_TTY=$(tty) # Required for git cli GPG commit signing
+
+source ~/.aliases
+source <(kubectl completion zsh)
+
+rm ~/Library/Preferences/com.googlecode.iterm2.plist || true
+cp ~/com.googlecode.iterm2.plist ~/Library/Preferences

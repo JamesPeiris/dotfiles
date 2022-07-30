@@ -1,12 +1,65 @@
-# defaults write -g com.apple.trackpad.scaling 5.0 # Has this changed from "com.apple.trackpad.scaling" ?
-defaults write -g com.apple.trackpad.scaling 0.5
-defaults write com.apple.Dock autohide-delay -float 0
-defaults write com.apple.dock expose-animation-duration -float 0.3
-defaults write com.apple.Dock showhidden -bool YES
-defaults write com.apple.finder AppleShowAllFiles -bool YES
-defaults write com.apple.finder CreateDesktop -bool false
-defaults write -g NSAllowContinuousSpellChecking -bool false
-defaults write com.apple.dock expose-animation-duration -float 0 
-defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool true
+#!/bin/bash
 
-# TODO: Describe what each of these does!
+# 
+# Mac OS X configuration
+#
+# This configuration applies to the latest version of macOS (currently 11.3),
+# and sets up preferences and configurations for all the built-in services and
+# apps. Third-party app config should be done elsewhere.
+# 
+# If you want to figure out what default needs changing, do the following:
+#
+#   1. `cd /tmp`
+# 
+#   2. Store current defaults in file:
+#        $ defaults read > before
+# 
+#   3. Apply changes to the system
+# 
+#   4. Store new defaults in file:
+#        $ defaults read > after
+# 
+#   5. Diff the files:
+#        $ diff before after
+#
+# Links:
+#   http://secrets.blacktree.com/?showapp=com.apple.finder
+#   https://github.com/herrbischoff/awesome-macos-command-line
+# 
+# Prior art:
+#   https://github.com/geerlingguy/dotfiles/blob/master/.osx
+#   https://github.com/mathiasbynens/dotfiles/blob/main/.macos
+# 
+
+export GLOBAL_USER_PREF_FILE=~/Library/Preferences/.GlobalPreferences.plist
+
+# Close any open System Preferences panes.
+# This is to prevent them from overriding the settings that are soon to change.
+
+osascript -e 'tell application "System Preferences" to quit'
+
+# Ask for the administrator password upfront.
+
+sudo -v
+
+# Keep-alive:
+#   update existing `sudo` time stamp until `.macos` has finished.
+
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+# Include relevant command files.
+
+# TODO: Make it work like this when Ansible file symlinking issue fixed.
+# source ~/.osx-scripts/audio
+# source ~/.osx-scripts/behavioural
+# source ~/.osx-scripts/system
+# source ~/.osx-scripts/visual
+
+echo "⏳ ALL"
+
+source ~/.osx-audio
+source ~/.osx-behavioural
+source ~/.osx-system
+source ~/.osx-visual
+
+echo "✅ ALL"
