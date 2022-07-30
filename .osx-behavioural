@@ -334,6 +334,7 @@ defaults write com.apple.Safari HomePage -string "about:blank"
 # Prevent Safari from opening ‘safe’ files automatically after downloading
 defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 
+# TODO: Does not seem to work
 # Allow hitting the Backspace key to go to the previous page in history
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
 
@@ -347,9 +348,22 @@ defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 
 # Enable the Develop menu and the Web Inspector in Safari
-defaults write com.apple.Safari IncludeDevelopMenu -bool true
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+defaults write com.apple.Safari IncludeDevelopMenu -int 1 # TODO: This appears to get deleted by Safari each time it gets opened (unless you set it from Safari itself)
+defaults write com.apple.Safari 'WebKitPreferences.developerExtrasEnabled' -int 1
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -int 1
+# defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+
+# Clear recent web searches
+defaults write com.apple.Safari RecentWebSearches '()'
+
+# Don't show favourites in smart search field (if enabled)
+defaults write com.apple.Safari ShowFavoritesUnderSmartSearchField -int 0
+
+# Disable website-specific search
+defaults write com.apple.Safari WebsiteSpecificSearchEnabled -int 0
+
+# NO ADVERTISING EFFECTIVENESS TRACKING - EVEN IF ANONYMISED!
+defaults write com.apple.Safari 'WebKitPreferences.privateClickMeasurementEnabled' -int 0
 
 # Add a context menu item for showing the Web Inspector in web views
 defaults write "${GLOBAL_USER_PREF_FILE}" WebKitDeveloperExtras -bool true

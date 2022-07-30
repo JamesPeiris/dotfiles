@@ -4,9 +4,9 @@
 
 # TODO: Tell brew not to update on each run - only once a week
 #       Should this live in aliases or .zshrc?
-# export HOMEBREW_AUTO_UPDATE_SECS=604800 
+# export HOMEBREW_AUTO_UPDATE_SECS=604800
 
-alias l="exa -Flah --sort type"
+alias l="exa -Flahd --color-scale --sort type"
 alias ls="l --tree"
 
 alias l1="ls -L 1"
