@@ -1,12 +1,14 @@
-export PATH=/Applications/Rancher\ Desktop.app/Contents/Resources/resources/darwin/bin:$PATH
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-export PATH=/opt/homebrew/bin:$PATH
+export PATH=$PATH:/opt/homebrew/bin
+export PATH=$PATH:${KREW_ROOT:-$HOME/.krew}/bin
+export PATH=$PATH:/Applications/Rancher\ Desktop.app/Contents/Resources/resources/darwin/bin
 
-export GPG_TTY=$(tty) # Required for git cli GPG commit signing
+# Required for git cli GPG commit signing
+export GPG_TTY=$(tty)
 
 source ~/.aliases
-source ~/.nvm/nvm.sh
 source <(kubectl completion zsh)
 
 rm ~/Library/Preferences/com.googlecode.iterm2.plist || true
-cp ~/com.googlecode.iterm2.plist ~/Library/Preferences # TODO: Can this be turned into a symlink?
+
+# TODO: Can the following instead be a symlink?
+cp ~/com.googlecode.iterm2.plist ~/Library/Preferences
