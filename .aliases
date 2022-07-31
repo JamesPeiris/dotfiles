@@ -6,22 +6,16 @@
 #       Should this live in aliases or .zshrc?
 # export HOMEBREW_AUTO_UPDATE_SECS=604800
 
-alias l="exa -Flahd --color-scale --sort type"
-alias ls="l --tree"
+alias l="exa -Flah --color-scale --sort type"
+alias lst="l --tree"
 
-alias l1="ls -L 1"
-alias l2="ls -L 2"
-alias l3="ls -L 3"
-alias l4="ls -L 4"
-
-alias ls1="l1"
-alias ls2="l2"
-alias ls3="l3"
-alias ls4="l4"
+alias l1="lst -L 1"
+alias l2="lst -L 2"
+alias l3="lst -L 3"
+alias l4="lst -L 4"
 
 alias p="pwd"
 alias c="clear"
-alias grep="rg"
 
 # -----------------------------------------------
 #                    HOMEBREW
