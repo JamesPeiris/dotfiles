@@ -6,13 +6,18 @@
 #       Should this live in aliases or .zshrc?
 # export HOMEBREW_AUTO_UPDATE_SECS=604800
 
-alias l="exa -Flah --color-scale --sort type"
+export EXA_ICONS=true
+
+# Use "unset EXA_ICONS" to suppress icons in output
+alias l='exa -a1s type $( [[ "$EXA_ICONS" ]] && echo --icons )'
 alias lst="l --tree"
 
 alias l1="lst -L 1"
 alias l2="lst -L 2"
 alias l3="lst -L 3"
 alias l4="lst -L 4"
+alias l5="lst -L 5"
+alias l6="lst -L 6"
 
 alias p="pwd"
 alias c="clear"
