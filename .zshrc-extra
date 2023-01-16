@@ -1,6 +1,6 @@
+export PATH=$PATH:${$HOME}/.rd/bin
 export PATH=$PATH:/opt/homebrew/bin
 export PATH=$PATH:${KREW_ROOT:-$HOME/.krew}/bin
-export PATH=$PATH:~/.rd/bin
 
 # Required for git cli GPG commit signing
 export GPG_TTY=$(tty)
