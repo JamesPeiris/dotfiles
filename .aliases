@@ -85,9 +85,6 @@ alias owndir="chmod -R 0755"
 #                     DOCKER
 # -----------------------------------------------
 
-# TODO: Add check for Apple Silicon before applying this alias
-alias docker=/Applications/Rancher\ Desktop.app/Contents/Resources/resources/darwin/bin/nerdctl
-
 alias di="docker images"
 alias dia="di -a"
 alias doco="docker container"
