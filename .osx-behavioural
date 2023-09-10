@@ -8,55 +8,55 @@ echo "   ⏳ behavioural"
 # <SETTING> (<VALUE>) [<REASON>]
 
 # Automatic Capitalization (Disable)  as it’s annoying when typing code
-defaults write "${GLOBAL_USER_PREF_FILE}" NSAutomaticCapitalizationEnabled -bool false
+# # # # # # # # defaults write "${GLOBAL_USER_PREF_FILE}" NSAutomaticCapitalizationEnabled -bool false
 
 # Disable smart dashes as they’re annoying when typing code
-defaults write "${GLOBAL_USER_PREF_FILE}" NSAutomaticDashSubstitutionEnabled -bool false
+# # # # # # # # defaults write "${GLOBAL_USER_PREF_FILE}" NSAutomaticDashSubstitutionEnabled -bool false
 
 # Disable automatic period substitution as it’s annoying when typing code
-defaults write "${GLOBAL_USER_PREF_FILE}" NSAutomaticPeriodSubstitutionEnabled -bool false
+# # # # # # # # defaults write "${GLOBAL_USER_PREF_FILE}" NSAutomaticPeriodSubstitutionEnabled -bool false
 
 # Disable smart quotes as they’re annoying when typing code
-defaults write "${GLOBAL_USER_PREF_FILE}" NSAutomaticQuoteSubstitutionEnabled -bool false
+# # # # # # # # defaults write "${GLOBAL_USER_PREF_FILE}" NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool true
+# # # # # # # # defaults write com.apple.dock autohide -bool true
 # Remove the auto-hiding Dock delay
-defaults write com.apple.dock autohide-delay -float 0
+# # # # # # # # defaults write com.apple.dock autohide-delay -float 0
 # Remove the animation when hiding/showing the Dock
-defaults write com.apple.dock autohide-time-modifier -float 0
+# # # # # # # # defaults write com.apple.dock autohide-time-modifier -float 0
 
 # Adjust toolbar title rollover delay
-defaults write "${GLOBAL_USER_PREF_FILE}" NSToolbarTitleViewRolloverDelay -float 0
+# # # # # # # # defaults write "${GLOBAL_USER_PREF_FILE}" NSToolbarTitleViewRolloverDelay -float 0
 
 # Increase window resize speed for Cocoa applications
-defaults write "${GLOBAL_USER_PREF_FILE}" NSWindowResizeTime -float 0.001
+# # # # # # # # defaults write "${GLOBAL_USER_PREF_FILE}" NSWindowResizeTime -float 0.001
 
 # Expand print panel by default
-defaults write "${GLOBAL_USER_PREF_FILE}" PMPrintingExpandedStateForPrint -bool true
-defaults write "${GLOBAL_USER_PREF_FILE}" PMPrintingExpandedStateForPrint2 -bool true
+# # # # # # # # defaults write "${GLOBAL_USER_PREF_FILE}" PMPrintingExpandedStateForPrint -bool true
+# # # # # # # # defaults write "${GLOBAL_USER_PREF_FILE}" PMPrintingExpandedStateForPrint2 -bool true
 
 # Save to disk (not to iCloud) by default
-defaults write "${GLOBAL_USER_PREF_FILE}" NSDocumentSaveNewDocumentsToCloud -bool false
+# # # # # # # # defaults write "${GLOBAL_USER_PREF_FILE}" NSDocumentSaveNewDocumentsToCloud -bool false
 
 # Automatically quit printer app once the print jobs complete
-defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+# # # # # # # # defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 # Disable the “Are you sure you want to open this application?” dialog
-defaults write com.apple.LaunchServices LSQuarantine -bool false
+# # # # # # # # defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
-/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+# # # # # # # # /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 
 # Display ASCII control characters using caret notation in standard text views
 # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
-defaults write "${GLOBAL_USER_PREF_FILE}" NSTextShowsControlCharacters -bool true
+# # # # # # # # defaults write "${GLOBAL_USER_PREF_FILE}" NSTextShowsControlCharacters -bool true
 
 # Disable Resume system-wide
-defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
+# # # # # # # # defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
 
 # Disable automatic termination of inactive apps
-defaults write "${GLOBAL_USER_PREF_FILE}" NSDisableAutomaticTermination -bool true
+# # # # # # # # defaults write "${GLOBAL_USER_PREF_FILE}" NSDisableAutomaticTermination -bool true
 
 ###############################################################################
 # Energy saving                                                               #
@@ -67,23 +67,23 @@ defaults write "${GLOBAL_USER_PREF_FILE}" NSDisableAutomaticTermination -bool tr
 # sudo pmset -a lidwake 1
 
 # Restart automatically on power loss
-sudo pmset -a autorestart 1
+# # # # # # # # sudo pmset -a autorestart 1
 
 # Restart automatically if the computer freezes
-sudo systemsetup -setrestartfreeze on
+# # # # # # # # sudo systemsetup -setrestartfreeze on
 
 # Sleep the display after 15 minutes
-sudo pmset -a displaysleep 15
+# # # # # # # # sudo pmset -a displaysleep 15
 
 # TODO: Why is this useful?
 # # Disable machine sleep while charging
 # sudo pmset -c sleep 0
 
 # Set machine sleep to 5 minutes on battery
-sudo pmset -b sleep 5
+# # # # # # # # sudo pmset -b sleep 5
 
 # Set standby delay to 24 hours (default is 1 hour)
-sudo pmset -a standbydelay 86400
+# # # # # # # # sudo pmset -a standbydelay 86400
 
 # TODO: Why is this useful?
 # # Never go into computer sleep mode
@@ -108,35 +108,35 @@ sudo pmset -a standbydelay 86400
 # defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool true
 # defaults write "${GLOBAL_USER_PREF_FILE}" _HIEnableThemeSwitchHotKey -bool true # TODO: Uncomment and test this one
 
-defaults write "${GLOBAL_USER_PREF_FILE}" NSAllowContinuousSpellChecking -bool false
+# # # # # # # # defaults write "${GLOBAL_USER_PREF_FILE}" NSAllowContinuousSpellChecking -bool false
 
 # TODO: What is this doing?
-defaults write com.apple.finder CreateDesktop -bool false
+# # # # # # # # defaults write com.apple.finder CreateDesktop -bool false
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
 
 # Trackpad: Increase the pointer movement speed (same physical movement = larger pointer movement)
-defaults write "${GLOBAL_USER_PREF_FILE}" com.apple.trackpad.scaling 5.0
+# # # # # # # # defaults write "${GLOBAL_USER_PREF_FILE}" com.apple.trackpad.scaling 5.0
 
 # TODO: Review whether this is actually nice
 # Trackpad: enable tap to click for this user and for the login screen
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write "${GLOBAL_USER_PREF_FILE}" com.apple.mouse.tapBehavior -int 1
-defaults write "${GLOBAL_USER_PREF_FILE}" com.apple.mouse.tapBehavior -int 1
+# # # # # # # # defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+# # # # # # # # defaults -currentHost write "${GLOBAL_USER_PREF_FILE}" com.apple.mouse.tapBehavior -int 1
+# # # # # # # # defaults write "${GLOBAL_USER_PREF_FILE}" com.apple.mouse.tapBehavior -int 1
 
 # Trackpad: Haptic feedback (light, silent clicking)
 # defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
 # defaults write com.apple.AppleMultitouchTrackpad ActuationStrength -int 0
 
 # Trackpad: map bottom right corner to right-click
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
-defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool true
-defaults write com.apple.AppleMultitouchTrackpad TrackpadCornerSecondaryClick -int 2
-defaults -currentHost write "${GLOBAL_USER_PREF_FILE}" com.apple.trackpad.trackpadCornerClickBehavior -int 1
-defaults -currentHost write "${GLOBAL_USER_PREF_FILE}" com.apple.trackpad.enableSecondaryClick -bool true
+# # # # # # # # defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+# # # # # # # # defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+# # # # # # # # defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool true
+# # # # # # # # defaults write com.apple.AppleMultitouchTrackpad TrackpadCornerSecondaryClick -int 2
+# # # # # # # # defaults -currentHost write "${GLOBAL_USER_PREF_FILE}" com.apple.trackpad.trackpadCornerClickBehavior -int 1
+# # # # # # # # defaults -currentHost write "${GLOBAL_USER_PREF_FILE}" com.apple.trackpad.enableSecondaryClick -bool true
 
 # Trackpad: map bottom right corner to right-click (requires restart!)
 # defaults write "${GLOBAL_USER_PREF_FILE}" ContextMenuGesture -int 1
@@ -161,8 +161,8 @@ defaults -currentHost write "${GLOBAL_USER_PREF_FILE}" com.apple.trackpad.enable
 # defaults write "${GLOBAL_USER_PREF_FILE}" ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate, and make it happen more quickly.
-defaults write "${GLOBAL_USER_PREF_FILE}" InitialKeyRepeat -int 10
-defaults write "${GLOBAL_USER_PREF_FILE}" KeyRepeat -int 1
+# # # # # # # # defaults write "${GLOBAL_USER_PREF_FILE}" InitialKeyRepeat -int 10
+# # # # # # # # defaults write "${GLOBAL_USER_PREF_FILE}" KeyRepeat -int 1
 # defaults write -g InitialKeyRepeat -int 20 # M1 Mac + Monterey = does not persist on restart, only logout/in
 # defaults write -g KeyRepeat -int 1         # M1 Mac + Monterey = does not persist on restart, only logout/in
 
@@ -236,9 +236,9 @@ defaults write "${GLOBAL_USER_PREF_FILE}" KeyRepeat -int 1
 # defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
 # # Enable snap-to-grid for icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+# # # # # # # # /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+# # # # # # # # /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+# # # # # # # # /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
 # # Disable the warning before emptying the Trash
 # defaults write com.apple.finder WarnOnEmptyTrash -bool false
@@ -271,7 +271,7 @@ defaults write "${GLOBAL_USER_PREF_FILE}" KeyRepeat -int 1
 # defaults write com.apple.dock dashboard-in-overlay -bool true
 
 # # Don’t automatically rearrange Spaces based on most recent use
-defaults write com.apple.dock mru-spaces -bool false
+# # # # # # # # defaults write com.apple.dock mru-spaces -bool false
 
 # # Disable the Launchpad gesture (pinch with thumb and three fingers)
 # #defaults write com.apple.dock showLaunchpadGestureEnabled -int 0
@@ -279,9 +279,9 @@ defaults write com.apple.dock mru-spaces -bool false
 # # Reset Launchpad, but keep the desktop wallpaper intact
 # find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
 
-# 
+#
 # Hot corners
-# 
+#
 # Possible values:
 #  0: no-op
 #  2: Mission Control
@@ -294,119 +294,119 @@ defaults write com.apple.dock mru-spaces -bool false
 # 11: Launchpad
 # 12: Notification Center
 # 13: Lock Screen
-# 
+#
 # Specify the hot corners using this format:
-# 
+#
 #   "wvous-<POSITION>-corner -int <COMMAND_ID>"
 #   "# defaults write com.apple.dock wvous-<POSITION>-modifier -int 0" <--- TODO: What is this modifier and why is it always set to 0?
-# 
+#
 #   (
 #     where:
-# 
+#
 #     POSITION    = tl | tr | bl | br
 #     COMMAND_ID  = 0  | 2  | 3  | 4  | 5  | 6  | 7  | 10 | 11 | 12 | 13
 #   )
-# 
+#
 
 # Top right screen corner → Desktop
-defaults write com.apple.dock wvous-tr-corner -int 4
-defaults write com.apple.dock wvous-tr-modifier -int 0
+# # # # # # # # defaults write com.apple.dock wvous-tr-corner -int 4
+# # # # # # # # defaults write com.apple.dock wvous-tr-modifier -int 0
 
 # Bottom left screen corner → Lock Screen
-defaults write com.apple.dock wvous-bl-corner -int 13
-defaults write com.apple.dock wvous-bl-modifier -int 0
+# # # # # # # # defaults write com.apple.dock wvous-bl-corner -int 13
+# # # # # # # # defaults write com.apple.dock wvous-bl-modifier -int 0
 
 ###############################################################################
 # Safari & WebKit                                                             #
 ###############################################################################
 
 # Privacy: don’t send search queries to Apple
-defaults write com.apple.Safari UniversalSearchEnabled -bool false
-defaults write com.apple.Safari SuppressSearchSuggestions -bool true
+# # # # # # # # defaults write com.apple.Safari UniversalSearchEnabled -bool false
+# # # # # # # # defaults write com.apple.Safari SuppressSearchSuggestions -bool true
 
 # Press Tab to highlight each item on a web page
-defaults write com.apple.Safari WebKitTabToLinksPreferenceKey -bool true
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2TabsToLinks -bool true
+# # # # # # # # defaults write com.apple.Safari WebKitTabToLinksPreferenceKey -bool true
+# # # # # # # # defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2TabsToLinks -bool true
 
 # Set Safari’s home page to `about:blank` for faster loading
-defaults write com.apple.Safari HomePage -string "about:blank"
+# # # # # # # # defaults write com.apple.Safari HomePage -string "about:blank"
 
 # Prevent Safari from opening ‘safe’ files automatically after downloading
-defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
+# # # # # # # # defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 
 # TODO: Does not seem to work
 # Allow hitting the Backspace key to go to the previous page in history
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
+# # # # # # # # defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
 
 # Disable Safari’s thumbnail cache for History and Top Sites
-defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
+# # # # # # # # defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 
 # Enable Safari’s debug menu
-defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+# # # # # # # # defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
 # Make Safari’s search banners default to Contains instead of Starts With
-defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
+# # # # # # # # defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 
 # Enable the Develop menu and the Web Inspector in Safari
-defaults write com.apple.Safari IncludeDevelopMenu -int 1 # TODO: This appears to get deleted by Safari each time it gets opened (unless you set it from Safari itself)
-defaults write com.apple.Safari 'WebKitPreferences.developerExtrasEnabled' -int 1
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -int 1
+# # # # # # # # defaults write com.apple.Safari IncludeDevelopMenu -int 1 # TODO: This appears to get deleted by Safari each time it gets opened (unless you set it from Safari itself)
+# # # # # # # # defaults write com.apple.Safari 'WebKitPreferences.developerExtrasEnabled' -int 1
+# # # # # # # # defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -int 1
 # defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 
 # Clear recent web searches
-defaults write com.apple.Safari RecentWebSearches '()'
+# # # # # # # # defaults write com.apple.Safari RecentWebSearches '()'
 
 # Don't show favourites in smart search field (if enabled)
-defaults write com.apple.Safari ShowFavoritesUnderSmartSearchField -int 0
+# # # # # # # # defaults write com.apple.Safari ShowFavoritesUnderSmartSearchField -int 0
 
 # Disable website-specific search
-defaults write com.apple.Safari WebsiteSpecificSearchEnabled -int 0
+# # # # # # # # defaults write com.apple.Safari WebsiteSpecificSearchEnabled -int 0
 
 # NO ADVERTISING EFFECTIVENESS TRACKING - EVEN IF ANONYMISED!
-defaults write com.apple.Safari 'WebKitPreferences.privateClickMeasurementEnabled' -int 0
+# # # # # # # # defaults write com.apple.Safari 'WebKitPreferences.privateClickMeasurementEnabled' -int 0
 
 # Add a context menu item for showing the Web Inspector in web views
-defaults write "${GLOBAL_USER_PREF_FILE}" WebKitDeveloperExtras -bool true
+# # # # # # # # defaults write "${GLOBAL_USER_PREF_FILE}" WebKitDeveloperExtras -bool true
 
 # Enable continuous spellchecking
-defaults write com.apple.Safari WebContinuousSpellCheckingEnabled -bool true
+# # # # # # # # defaults write com.apple.Safari WebContinuousSpellCheckingEnabled -bool true
 
 # Disable auto-correct
-defaults write com.apple.Safari WebAutomaticSpellingCorrectionEnabled -bool false
+# # # # # # # # defaults write com.apple.Safari WebAutomaticSpellingCorrectionEnabled -bool false
 
 # Disable AutoFill
-defaults write com.apple.Safari AutoFillFromAddressBook -bool false
-defaults write com.apple.Safari AutoFillPasswords -bool false
-defaults write com.apple.Safari AutoFillCreditCardData -bool false
-defaults write com.apple.Safari AutoFillMiscellaneousForms -bool false
+# # # # # # # # defaults write com.apple.Safari AutoFillFromAddressBook -bool false
+# # # # # # # # defaults write com.apple.Safari AutoFillPasswords -bool false
+# # # # # # # # defaults write com.apple.Safari AutoFillCreditCardData -bool false
+# # # # # # # # defaults write com.apple.Safari AutoFillMiscellaneousForms -bool false
 
 # Warn about fraudulent websites
-defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool true
+# # # # # # # # defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool true
 
 # Disable plug-ins
-defaults write com.apple.Safari WebKitPluginsEnabled -bool false
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2PluginsEnabled -bool false
+# # # # # # # # defaults write com.apple.Safari WebKitPluginsEnabled -bool false
+# # # # # # # # defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2PluginsEnabled -bool false
 
 # Disable Java
-defaults write com.apple.Safari WebKitJavaEnabled -bool false
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabled -bool false
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabledForLocalFiles -bool false
+# # # # # # # # defaults write com.apple.Safari WebKitJavaEnabled -bool false
+# # # # # # # # defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabled -bool false
+# # # # # # # # defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabledForLocalFiles -bool false
 
 # Block pop-up windows
-defaults write com.apple.Safari WebKitJavaScriptCanOpenWindowsAutomatically -bool false
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptCanOpenWindowsAutomatically -bool false
+# # # # # # # # defaults write com.apple.Safari WebKitJavaScriptCanOpenWindowsAutomatically -bool false
+# # # # # # # # defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptCanOpenWindowsAutomatically -bool false
 
 # Disable auto-playing video
-defaults write com.apple.Safari WebKitMediaPlaybackAllowsInline -bool false
-defaults write com.apple.SafariTechnologyPreview WebKitMediaPlaybackAllowsInline -bool false
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2AllowsInlineMediaPlayback -bool false
-defaults write com.apple.SafariTechnologyPreview com.apple.Safari.ContentPageGroupIdentifier.WebKit2AllowsInlineMediaPlayback -bool false
+# # # # # # # # defaults write com.apple.Safari WebKitMediaPlaybackAllowsInline -bool false
+# # # # # # # # defaults write com.apple.SafariTechnologyPreview WebKitMediaPlaybackAllowsInline -bool false
+# # # # # # # # defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2AllowsInlineMediaPlayback -bool false
+# # # # # # # # defaults write com.apple.SafariTechnologyPreview com.apple.Safari.ContentPageGroupIdentifier.WebKit2AllowsInlineMediaPlayback -bool false
 
 # Enable “Do Not Track”
-defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
+# # # # # # # # defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 
 # Update extensions automatically
-defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
+# # # # # # # # defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
 
 # ###############################################################################
 # # Mail                                                                        #
@@ -630,7 +630,7 @@ defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
 # ###############################################################################
 
 # Expand save panel by default
-defaults write "${GLOBAL_USER_PREF_FILE}" NSNavPanelExpandedStateForSaveMode -bool true
-defaults write "${GLOBAL_USER_PREF_FILE}" NSNavPanelExpandedStateForSaveMode2 -bool true
+# # # # # # # # defaults write "${GLOBAL_USER_PREF_FILE}" NSNavPanelExpandedStateForSaveMode -bool true
+# # # # # # # # defaults write "${GLOBAL_USER_PREF_FILE}" NSNavPanelExpandedStateForSaveMode2 -bool true
 
 echo "   ✅ behavioural"
