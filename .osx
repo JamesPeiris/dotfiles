@@ -1,35 +1,35 @@
 #!/bin/bash
 
-# 
+#
 # Mac OS X configuration
 #
 # This configuration applies to the latest version of macOS (currently 11.3),
 # and sets up preferences and configurations for all the built-in services and
 # apps. Third-party app config should be done elsewhere.
-# 
+#
 # If you want to figure out what default needs changing, do the following:
 #
 #   1. `cd /tmp`
-# 
+#
 #   2. Store current defaults in file:
 #        $ defaults read > before
-# 
+#
 #   3. Apply changes to the system
-# 
+#
 #   4. Store new defaults in file:
 #        $ defaults read > after
-# 
+#
 #   5. Diff the files:
 #        $ diff before after
 #
 # Links:
 #   http://secrets.blacktree.com/?showapp=com.apple.finder
 #   https://github.com/herrbischoff/awesome-macos-command-line
-# 
+#
 # Prior art:
 #   https://github.com/geerlingguy/dotfiles/blob/master/.osx
 #   https://github.com/mathiasbynens/dotfiles/blob/main/.macos
-# 
+#
 
 export GLOBAL_USER_PREF_FILE=~/Library/Preferences/.GlobalPreferences.plist
 
@@ -58,8 +58,8 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 echo "⏳ ALL"
 
 source ~/.osx-audio
-source ~/.osx-behavioural
-source ~/.osx-system
-source ~/.osx-visual
+# source ~/.osx-behavioural
+# source ~/.osx-system
+# source ~/.osx-visual
 
 echo "✅ ALL"
